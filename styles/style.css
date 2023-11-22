@@ -17,4 +17,22 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  background: var(--bg-color);
+  font-family: var(--ff-inter), sans-serif;
+  color: var(--text-color);
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.floppy {
+  color: var(--floppy);
+  width: 15px;
+}
+
+.text {
+  color: var(--floppy);
+  font-family: var(--ff-inter);
+  font-weight: var(--fw-text);
 }
