@@ -8,6 +8,7 @@
 :root.theme-dark {
     --bg-color: #000;
     --accent-color: #00CC14;
+    --color-sparks: #FF0000;
 
     --ff-inter: 'Inter-Variable';
     --ff-press: 'PressStart2P';
@@ -16,14 +17,17 @@
     --fw-title: 785;
     --fw-text: 465;
 
+    --lable-shadow: var(--bg-color);
     --border-color: var(--accent-color);
     --text-color: var(--accent-color);
     --floppy: var(--accent-color);
+    --heard-border: var(--accent-color);
 }
 
 :root.theme-light {
     --bg-color: #fff;
     --accent-color: #000;
+    --color-sparks: #FF0000;
 
     --ff-inter: 'Inter-Variable';
     --ff-press: 'PressStart2P';
@@ -32,15 +36,18 @@
     --fw-title: 700;
     --fw-text: 400;
 
+    --lable-shadow: var(--bg-color);
     --border-color: var(--accent-color);
     --text-color: var(--accent-color);
     --floppy: var(--accent-color);
+    --heard-border: var(--accent-color);
 }
 
 @media (prefers-color-scheme: light) {
     :root {
         --bg-color: #fff;
         --accent-color: #000;
+        --color-sparks: #FF0000;
     
         --ff-inter: 'Inter-Variable';
         --ff-press: 'PressStart2P';
@@ -49,9 +56,11 @@
         --fw-title: 700;
         --fw-text: 400;
     
+        --lable-shadow: var(--bg-color);
         --border-color: var(--accent-color);
         --text-color: var(--accent-color);
         --floppy: var(--accent-color);
+        --heard-border: var(--accent-color);
     }
 }
 

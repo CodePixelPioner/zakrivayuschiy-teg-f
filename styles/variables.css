@@ -3,6 +3,7 @@
 :root {
     --bg-color: #000;
     --accent-color: #00CC14;
+    --color-sparks: #FF0000;
 
     --ff-inter: 'Inter-Variable';
     --ff-press: 'PressStart2P';
@@ -11,7 +12,9 @@
     --fw-title: 785;
     --fw-text: 465;
 
+    --lable-shadow: var(--bg-color);
     --border-color: var(--accent-color);
     --text-color: var(--accent-color);
     --floppy: var(--accent-color);
+    --heard-border: var(--accent-color);
 }
