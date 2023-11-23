@@ -11,6 +11,7 @@
     --fw-title: 785;
     --fw-text: 465;
 
+    --border-color: var(--accent-color);
     --text-color: var(--accent-color);
     --floppy: var(--accent-color);
 }
