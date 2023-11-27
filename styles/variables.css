@@ -12,6 +12,7 @@
     --fw-title: 785;
     --fw-text: 465;
 
+    --text-shadow: var(--accent-color);
     --lable-shadow: var(--bg-color);
     --border-color: var(--accent-color);
     --text-color: var(--accent-color);
