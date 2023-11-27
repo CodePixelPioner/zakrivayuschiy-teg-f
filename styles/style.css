@@ -32,16 +32,19 @@
 }
 
 .header {
-
   font-family: var(--ff-press, sans-serif);
   text-transform: uppercase;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
-  padding-block-start: 136px; /*медиазапросы 120px*/
+  padding-block-start: clamp(
+    7.5rem,
+    7.1479rem + 1.5023vw,
+    8.5rem
+  ); /*медиазапросы 120px*/
   background-color: var(--bg-color);
-  border: 2px solid var(--border-color, #00CC14);
+  border: 2px solid var(--border-color, #00cc14);
   inline-size: clamp(375px, 90%, 700px);
   padding-block-end: 25px;
   display: flex;
@@ -54,6 +57,8 @@
 .header__title {
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   margin-block-end: 20px;
+  text-decoration: none;
+  outline: none;
 }
 
 .header__subtitle {
@@ -79,7 +84,7 @@
   padding: 0;
   position: relative;
   margin-inline-start: 17px;
-
+  transition: 0.3s ease;
 }
 
 .theme-menu__button:disabled {
@@ -91,6 +96,43 @@
   position: absolute;
   content: "▶";
   inset-inline-start: -20px;
+  animation: moving 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes moving {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 4px 0;
+  }
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 1px;
+  background-color: var(--text-color);
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
 }
 
 .main {
@@ -99,11 +141,10 @@
   gap: 50px;
   align-items: center;
   inline-size: clamp(375px, 90%, 700px);
-  
 }
 
 .content {
-  border: 2px solid var(--border-color, #00CC14);
+  border: 2px solid var(--border-color, #00cc14);
   background-color: var(--bg-color);
 }
 
@@ -112,9 +153,8 @@
   font-weight: var(--fw-title);
   padding-inline: 10px;
   padding-block-start: 5px;
-  padding-block-end: 3px;
+  padding-block-end: 5px;
   display: inline-block;
-  block-size: 31px;
 }
 
 .content__text {
@@ -131,7 +171,7 @@
 }
 
 .content__text:last-of-type {
-  margin-block-end: 27px;
+  margin-block-end: 25px;
 }
 
 .content__block-image {
@@ -140,13 +180,12 @@
 
 .content__image {
   max-inline-size: 100%;
-  border-block-start: 2px solid var(--border-color, #00CC14);
-  border-block-end: 2px solid var(--border-color, #00CC14);
-  block-size: 700px;
+  border-block-start: 2px solid var(--border-color, #00cc14);
+  border-block-end: 2px solid var(--border-color, #00cc14);
+  display: block;
   object-fit: cover;
-  object-position: -333px;
   position: relative;
-  margin-block-end: 21px;
+  margin-block-end: 25px;
 }
 
 .lable {
@@ -157,12 +196,10 @@
   font-weight: 400;
   text-transform: uppercase;
   opacity: 0.5;
-  inset-inline-end: 25px;
-  inset-block-start: 27px;
-  text-shadow: 1px 1px var(--lable-shadow), 
-  -1px -1px var(--lable-shadow), 
-  -1px 1px var(--lable-shadow), 
-  1px -1px var(--lable-shadow);
+  inset-inline-end: 25px; /*11px в медиазапросах для мобилки, 3px в десктопе*/
+  inset-block-start: 27px; /*25px в медиазапросах для мобилки, 3px в десктопе*/
+  text-shadow: 1px 1px var(--lable-shadow), -1px -1px var(--lable-shadow),
+    -1px 1px var(--lable-shadow), 1px -1px var(--lable-shadow);
 }
 
 .card__items {
@@ -171,7 +208,7 @@
   gap: 12px;
   justify-content: end;
   margin-inline-end: 25px;
-  margin-block-end: 24px;
+  margin-block-end: 25px;
   align-items: center;
 }
 
@@ -212,7 +249,18 @@
   block-size: 36px;
 }
 
+@media (width <= 376px) {
+  .lable {
+    inset-inline-end: 11px; /*11px в медиазапросах для мобилки, 3px в десктопе*/
+    inset-block-start: 25px; /*25px в медиазапросах для мобилки, 3px в десктопе*/
+  }
 
+  .content__title {
+    padding-block-start: 5px;
+    padding-block-end: 5px;
+    display: inline-block;
+  }
+}
 
 /*
 @supports((text-stroke: 1px var(--lable-shadow)) or (-webkit-text-stroke: 1px var(--lable-shadow))) {
@@ -223,9 +271,6 @@
   }
 } 
 */
-
-
-
 
 /*
 Дискетка
