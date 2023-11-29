@@ -249,7 +249,7 @@
   cursor: pointer;
   position: relative;
   z-index: 1;
-  transition: color 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 .button::before {
@@ -324,7 +324,6 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
-  margin-block-start: 50px;
   inline-size: 340px;
   min-block-size: 55px;
   justify-content: center;
@@ -414,12 +413,13 @@
   }
 }
 
-/*
-@supports((text-stroke: 1px var(--lable-shadow)) or (-webkit-text-stroke: 1px var(--lable-shadow))) {
+@supports (
+  (text-stroke: 1px var(--lable-shadow)) or
+    (-webkit-text-stroke: 1px var(--lable-shadow))
+) {
   .lable {
-      -webkit-text-stroke: 1px var(--lable-shadow);
-      text-stroke: 1px var(--lable-shadow);
-      text-shadow: none;
+    -webkit-text-stroke: 1px var(--lable-shadow);
+    text-stroke: 1px var(--lable-shadow);
+    text-shadow: none;
   }
-} 
-*/
+}
