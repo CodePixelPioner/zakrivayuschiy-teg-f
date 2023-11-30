@@ -37,7 +37,6 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  text-transform: uppercase;
   padding-block-start: clamp(
     120px,
     114.3662px + 1.5023vw,
@@ -336,7 +335,6 @@
   color: var(--floppy);
   position: relative;
   mix-blend-mode: difference;
-  color: var(--text-shadow);
   z-index: 1;
 }
 

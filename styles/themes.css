@@ -45,7 +45,7 @@
   --lable-shadow: var(--bg-color);
   --border-color: var(--accent-color);
   --text-color: var(--accent-color);
-  --floppy: var(--accent-color);
+  --floppy: var(--bg-color);
   --heard-border: var(--accent-color);
 }
 
@@ -68,7 +68,7 @@
     --lable-shadow: var(--bg-color);
     --border-color: var(--accent-color);
     --text-color: var(--accent-color);
-    --floppy: var(--accent-color);
+    --floppy: var(--bg-color);
     --heard-border: var(--accent-color);
   }
 }
